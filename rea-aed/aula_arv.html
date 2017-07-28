@@ -130,13 +130,13 @@
 		<div class="container">
 			<div class="col-md-8 col-md-offset-2 text-center wrap_title">
 				<h2>Árvore Binária</h2>
-				<p class="lead" style="margin-top:0">O objetivo dessa unidade é apresentar o conteúdo relacionado a Árvore Binária. Será feita
+				<p class="lead" style="margin-top:0">O objetivo dessa unidade é apresentar o conteúdo relacionado à Árvore Binária. Será feita
 				uma abordagem focando na linguagem C.</p>
 			</div>
 			<div class="col-md-10 col-md-offset-1  wrap_title">
 				<div class="row">
 					<h3>Estruturas de dados do tipo árvore</h3>
-					<p align="justify">Diferentemente das estruturas de dados que vistas nas últimas aulas (listas, pilhas e filas), as estruturas de dados do tipo árvore não apresentam uma forma linear, ou seja, os elementos não estão armazenados de maneira sequencial. .</p>
+					<p align="justify">Diferentemente das estruturas de dados vistas nas últimas aulas (listas, pilhas e filas), as estruturas de dados do tipo árvore não apresentam uma forma linear, ou seja, os elementos não estão armazenados de maneira sequencial. .</p>
 						<div class="row"><center><img class="img-responsive " src="img/arv/arvore.PNG" alt="" align="middle"><center></div>
 				</div>
 				<div class="row">
@@ -150,8 +150,8 @@
 					</ul>
 					<div class="row"><center><img class="img-responsive " src="img/arv/sub_conjuntos.PNG" alt="" align="middle"><center></div>
 					<h4>Propriedades de uma árvore binária</h4>
-					<p> <b>A) </b>  Os nós da sub-árvore esquerda são menores que os nós da sub-arvore direita e também menores que o nó raiz.</p>
-					<p> <b>B) </b> Os nós da sub-árvore direita são maiores que os nós da sub-arvore esquerda e também maiores que o nó raiz.</p>
+					<p> <b>A) </b>  Os nós da sub-árvore esquerda são menores que os nós da sub-árvore direita e também menores que o nó raiz.</p>
+					<p> <b>B) </b> Os nós da sub-árvore direita são maiores que os nós da sub-árvore esquerda e também maiores que o nó raiz.</p>
 					<p> <b>C) </b>Nomenclatura dos nós:</p>
 					<ul style="list-style-type:circle">
 						<li>•	 <b>Nó Raiz:</b> é o nó do topo da árvore;</li>
@@ -166,13 +166,13 @@
 					<div class="row"><center><img class="img-responsive " src="img/arv/descendente.PNG" alt="" align="middle"><center></div>
 					
 					<p> <b>F) </b>Em uma árvore binária um nó pai pode ter no máximo dois nós filhos</p>	
-					<p> <b>G) </b>O grau de um nó representa seu número de sub-arvores (nós filhos). Em uma árvore binária o grau máximo de um nó é 2 e o menor 0.</p>
+					<p> <b>G) </b>O grau de um nó representa seu número de sub-árvores (nós filhos). Em uma árvore binária, o grau máximo de um nó é 2 e o menor 0.</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/grau.PNG" alt="" align="middle"><center></div>
 					<p> <b>H) </b>O nível de um nó representa a sua distância do nó raiz, logo o nível do nó raiz é 0;</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/nivel.PNG" alt="" align="middle"><center></div>
 					<p> <b>I) </b>O número máximo de nós em um nível é dado pela expressão 2^n, sendo n o nível da árvore;</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/max_nos.PNG" alt="" align="middle"><center></div>
-					<p> <b>J) </b>Árvore estritamente binária: todos nós da arvore tem 0 ou 2 filhos</p>
+					<p> <b>J) </b>Árvore estritamente binária: todos os nós da árvore tem 0 ou 2 filhos</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/estritamente_binaria.PNG" alt="" align="middle"><center></div>
 					<p> <b>K) </b>Árvore completa: todos os nós com menos de dois filhos ficam no último e penúltimo nível da árvore</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/completa.PNG" alt="" align="middle"><center></div>
@@ -214,7 +214,7 @@
 };
 <span class="green">typedef</span> <span class="blue">struct</span> Arvore Arvore;
 					</pre>
-					<p>Para o auxilio em algumas operações, vamos utilizar também uma estrutura do tipo pilha. Assim conforme a aula sobre pilha definimos:</p>
+					<p>Para o auxílio em algumas operações, vamos utilizar também uma estrutura do tipo pilha. Assim conforme a aula sobre pilha definimos:</p>
 					<pre>
 <span class="com">/*definição do estrutura que irá representar cada elemento da árvore em um pilha*/</span>
 <span class="blue">struct</span> Elemento{
@@ -237,7 +237,7 @@ No *novo;
 No *anterior;
 
 Elemento *aux2;</pre>
-					<p>Nesse ponto definiremos também uma função cria_arvore( ). Ela será utilizada para alocar dinamicamente o espaço necessário para armazenar seu ponteiro "topo" e irá inicializá-lo com NULL, indicando que inicialmente a arvore esta vazia. Não podemos nos esquecer também da função cria_pilha().</p>
+					<p>Nesse ponto definiremos também uma função cria_arvore( ). Ela será utilizada para alocar dinamicamente o espaço necessário para armazenar seu ponteiro "topo" e irá inicializá-lo com NULL, indicando que inicialmente a árvore está vazia. Não podemos nos esquecer também da função cria_pilha().</p>
 					<pre>
 Arvore* cria_arvore(){
     <span class="com">/*alocação do ponteiro arv para controlar a árvore*/</span>
@@ -347,8 +347,8 @@ Pilha* cria_pilha(){
 					<div class="row"><center><img class="img-responsive " src="img/arv/insere8.PNG" alt="" align="middle"><center></div>
 					<p>Inserção do número 5 na árvore:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/insere9.PNG" alt="" align="middle"><center></div>
-					<h4>Consultar um nó árvore</h4>
-					<p>Será feita uma busca pela árvore com o objetivo de encontrar determinado dado armazenado. A cada nó visitado verifica-se primeiramente se este contém o dado procurado. Caso não contenha, é verificado se o dado procurado é maior ou menor queo dado do nó em questão. Se for maior a busca irá para sub-árvore direita deste nó e se for menor para a sub-árvore esquerda. </p>
+					<h4>Consultar um nó na árvore</h4>
+					<p>Será feita uma busca pela árvore com o objetivo de encontrar determinado dado armazenado. A cada nó visitado verifica-se primeiramente se este contém o dado procurado. Caso não contenha, é verificado se o dado procurado é maior ou menor que o dado do nó em questão. Se for maior, a busca irá para a sub-árvore direita deste nó e , se for menor, para a sub-árvore esquerda. </p>
 					<pre>
 <span class="blue">void</span> consulta_no(Arvore *arv){
 	<span class="com">/*caso a árvore esteja vazia*/</span>
@@ -730,7 +730,8 @@ Pilha* cria_pilha(){
 	}
 	getch();
 }</pre>
-					<p>Agora vamos as remoções:</p>
+					<p>Agora vamos às remoções:</p>
+					<div class="row"><center><img class="img-responsive " src="img/arv/insere9.PNG" alt="" align="middle"><center></div>
 					<p>Remoção do número 180 da árvore:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/remove1.PNG" alt="" align="middle"><center></div>
 					<p>Remoção do número 80 da árvore:</p>
@@ -743,7 +744,7 @@ Pilha* cria_pilha(){
 					<div class="row"><center><img class="img-responsive " src="img/arv/remove5.PNG" alt="" align="middle"><center></div>
 					
 					<h4>Esvaziar árvore</h4>
-					<p>Nesta última operação esvaziaremos a nossa árvore, ou seja, removeremos todos o seus elementos restantes. Esta é a implementação utilizada:</p>
+					<p>Nesta última operação esvaziaremos a nossa árvore, ou seja, removeremos todos os seus elementos restantes. Esta é a implementação utilizada:</p>
 					
 					<pre>
 void esvaziar_arvore(Arvore *arv, Pilha *pi){
@@ -794,7 +795,7 @@ void esvaziar_arvore(Arvore *arv, Pilha *pi){
 					<div class="row"><center><img class="img-responsive " src="img/arv/inicio_arvore.PNG" alt="" align="middle"><center></div>
 				</div>
 				<center>
-				<h3>Video Explicativo - Alocação Dinâmica</h3>
+				<h3>Video Explicativo - Ávore Binária Parte 3</h3>
 					<p>                                      </p>
 					<video width=80% height="315" class="img-responsive" controls>
 					  <source src="video/alocacao.mp4" type="video/mp4">
@@ -815,25 +816,21 @@ void esvaziar_arvore(Arvore *arv, Pilha *pi){
 	</div>
 	<div id="ex" class="content-section-b" style="border-top: 0">
 		<div class="container">
-
 			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
 				<h2>Exercícios</h2>
 			</div>
 			<center>
 			<div class="row">
-	
 				<div class="col-sm-4 col-sm-offset-4 wow fadeInDown text-center">
-					<a href="#">
+					<a href="exercicios/lista15.docx">
 					  <img class="rotate" src="img/icon/pdf.png" alt="Generic placeholder image">
 					  <h3>Download</h3>
-					  <center><p text-align: center>Dowload lista de exercícios para treinamento de Ponteiros</p></center>
+					  <center><p text-align: center>Dowload lista de exercícios para treinamento de Árvore Binária</p></center>
 					</a>
 				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
 				</div><!-- /.col-lg-4 -->
 				
 			</div><!-- /.row -->
-			
-			
 		</div>
 	</div>
 	

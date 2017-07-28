@@ -136,11 +136,11 @@
 			<div class="col-md-10 col-md-offset-1  wrap_title">
 				<div class="row">
 					<h3>Introdução</h3>
-					<p align="justify">Até o momento as variáveis, cálculos e dados de nossos programas foram temporários. Ao se fechar um programa, tudo se perdia e ao iniciar nossos aplicativos, tudo começava do zero novamente. Porém na prática, poucos programas funcionam assim.</p>
-					<p align="justify">A maioria dos programas que usamos armazenam informações em algum lugar (HD, pendrive, banco de dados de um servidor etc) para posteriormente consultar essas informações de algum local.</p>
-					<p align="justify">Então para trabalharmos com o armazenamento permanente utilizaremos a partir desse momento arquivos, nos quais os dados que forem utilizados nos programas poderão ficar armazenados para posteriormente serem utilizados.</p>
+					<p align="justify">Até o momento, as variáveis, cálculos e dados de nossos programas foram temporários. Ao se fechar um programa, tudo se perdia e ao iniciar nossos aplicativos, tudo começava do zero novamente. Porém, na prática, poucos programas funcionam assim.</p>
+					<p align="justify">A maioria dos programas que usamos armazena informações em algum lugar (HD, pendrive, banco de dados de um servidor etc) para, posteriormente, consultar essas informações de algum local.</p>
+					<p align="justify">Então, para trabalharmos com o armazenamento permanente utilizaremos a partir desse momento arquivos, nos quais os dados que forem utilizados nos programas poderão ficar armazenados para posteriormente serem utilizados.</p>
 					<p align="justify">A linguagem C trata os arquivos como uma sequência de bytes. Esta sequência pode ser manipulada de várias formas e para tanto, existem funções em C para criar, ler e escrever o conteúdo de arquivos independentemente de quais sejam os dados armazenados.</p>
-					<p align="justify">Em C podemos utilizar dois tipos de arquivos: arquivo binário e arquivo de texto.  Porém nosso foco será tratar de arquivos em texto, como os de extensão .txt, que nada mais serão do que uma lista de caracteres (dígitos, letras e símbolos, como espaço e acentuação).</p>
+					<p align="justify">Em C, podemos utilizar dois tipos de arquivos: arquivo binário e arquivo de texto.  Porém, nosso foco será tratar de arquivos em texto, como os de extensão .txt, que nada mais serão do que uma lista de caracteres (dígitos, letras e símbolos, como espaço e acentuação).</p>
 				</div>
 				<div class="row">
 					<h3>Ponteiro para arquivo</h3>
@@ -171,7 +171,7 @@
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo1.PNG" alt="" align="middle"><center></div>
 					<p>Tela de execução</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo1b.PNG" alt="" align="middle"><center></div>
-					<p>Possíveis problemas na abertura</p>
+					<b><p>Possíveis problemas na abertura de arquivos</p></b>
 					<p>Na prática, nem sempre é possível abrir um arquivo. Podem ocorrer algumas situações que impedem essa abertura, por exemplo:</p>
 					<ul style="list-style-type:circle">
 						<li>•	Você está tentando abrir um arquivo no modo de leitura, mas o arquivo não existe;</li>
@@ -185,7 +185,7 @@
 					<p>Adicionando o trecho para verificação ao exemplo ficaria da seguinte maneira:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo1d.PNG" alt="" align="middle"><center></div>
 					<h4>Gravando dados em arquivos</h4>
-					<p>fprintf</p>
+					<b><p>fprintf</p></b>
 					<p>A função fprintf armazena dados em um arquivo. Seu funcionamento é muito semelhante ao printf, a diferença principal é a existência de um parâmetro para informar o arquivo onde os dados serão armazenados.</p>
 					<p>Sintaxe:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/gravacao1a.PNG" alt="" align="middle"><center></div>
@@ -193,7 +193,7 @@
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo2a.PNG" alt="" align="middle"><center></div>
 					<p>Arquivo e tela de execução</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo2b.PNG" alt="" align="middle"><center></div>
-					<p>fputs</p>
+					<b><p>fputs</p></b>
 					<p>A função fputs também grava dados em um arquivo, porém se restringe a gravar o conteúdo de uma variável string ou um texto definido no corpo da própria função.</p>
 					<p>Vejamos a sintaxe para os dois casos:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/gravacao2a.PNG" alt="" align="middle"><center></div>
@@ -201,7 +201,7 @@
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo3a.PNG" alt="" align="middle"><center></div>
 					<p>Arquivo e tela de execução</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo3b.PNG" alt="" align="middle"><center></div>
-					<p>Feof e EOF</p>
+					<b><p>Feof e EOF</p></b>
 					<p>EOF ("End of file") indica o fim de um arquivo. Às vezes, é necessário verificar se um arquivo chegou ao fim. Para isto podemos usar a função feof(). Ela retorna algo diferente de zero se o arquivo chegou ao EOF, caso contrário retorna zero. Seu protótipo é:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/feof1.PNG" alt="" align="middle"><center></div>
 					<p>A verificação pode ser feita de duas maneiras equivalentes:</p>
@@ -213,14 +213,14 @@
 					<p>Faz a leitura de um caracter no arquivo.</p>
 					<p>Sintaxe:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/getc.PNG" alt="" align="middle"><center></div>
-					<p>Para realizar a leitura de um arquivo inteiro caracter por caracter podemos usar getc dentro de um laço de repetição. Como por exemplo:</p>
+					<p>Para realizar a leitura de um arquivo inteiro caracter por caracter podemos usar getc dentro de um laço de repetição. Por exemplo:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/getc2.PNG" alt="" align="middle"><center></div>
 					<p>A leitura será realizada até que o final do arquivo seja encontrado.</p>
 					<p>Exemplo:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo4a.PNG" alt="" align="middle"><center></div>
 					<p>Arquivo e tela de execução</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo4b.PNG" alt="" align="middle"><center></div>
-					<p>Leitura de strings – Função fgets()</p>
+					<h4><p>Leitura de strings – Função fgets()</p></h4>
 					<p>É utilizada para leitura de strings em um arquivo. Realiza a leitura dos caracteres até o final da linha quando encontra o caracter \n ou até que o número de caracteres predefinidos seja atingido (o que ocorrer primeiro). A função também pode ser finalizada quando encontrar o final do arquivo. Quando finaliza ou quando acontece algum erro a função retorna um ponteiro nulo (NULL).</p>
 					<p>Sintaxe:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/fgets.PNG" alt="" align="middle"><center></div>
@@ -228,7 +228,7 @@
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo5a.PNG" alt="" align="middle"><center></div>
 					<p>Arquivo e tela de execução</p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo5b.PNG" alt="" align="middle"><center></div>
-					<p>Leitura com FSCANF</p>
+					<b><p>Leitura com FSCANF</p></b>
 					<p>A função FSCANF funciona como a função SCANF, porém, ao invés de ler os dados de teclado, estes dados são lidos de arquivo.</p>
 					<p>Vamos compreender seu funcionamento através do exemplo: </p>
 					<div class="row"><center><img class="img-responsive " src="img/arq/exemplo6a.PNG" alt="" align="middle"><center></div>

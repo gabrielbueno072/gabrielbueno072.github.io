@@ -135,25 +135,25 @@
 			</div>
 			<div class="col-md-10 col-md-offset-1  wrap_title">
 				<div class="row">
-					<h3>Intrudução</h3>
+					<h3>Introdução</h3>
 					<p align="justify">Até agora temos trabalhado com estruturas de dados, das mais simples às mais complexas, que têm tamanho fixo. Por esta razão, denominam-se estruturas de dados estáticas (o seu tamanho e localização na memória não se alteram durante a execução).</p>
-					<p align="justify">Pois bem, agora vamos unir as estruturas estáticas juntamente com a alocação dinâmica e usar esses poderosos conceitos para criar outro importante, o de estrutura de dados dinâmicas, ou seja, as estruturas de dados que são alocadas, realocadas e movidas o quanto e do jeito que quisermos.</p>
-					<p>A partir daí poderemos trabalhar com conjuntos de dados dinâmicos, com por exemplo uma coleção de números, dados de um funcionário, dados de um produto, entre outros. O que difere esses dados dos demais é a necessidade de manipulações que faça com eles possam crescer, encolher, sofrer alterações ao logo da execução de determinado programa.</p>
-					<p>A primeira estrutura dinâmica que iremos conhecer são as listas.</p>
+					<p align="justify">Pois bem, agora vamos unir as estruturas estáticas juntamente com a alocação dinâmica e usar esses poderosos conceitos para criar outro importante, o de estruturas de dados dinâmicas, ou seja, as estruturas de dados que são alocadas, realocadas e movidas o quanto e do jeito que quisermos.</p>
+					<p>A partir daí, poderemos trabalhar com conjuntos de dados dinâmicos, com por exemplo uma coleção de números, dados de um funcionário, dados de um produto, entre outros. O que difere esses dados dos demais é a necessidade de manipulações que faça com que eles possam crescer, encolher, sofrer alterações ao logo da execução de determinado programa.</p>
+					<p>A primeira estrutura dinâmica que iremos estudar são as listas.</p>
 				</div>
 				<div class="row">
 					<h3>Listas Simplesmente Encadeadas</h3>
-						<p align="justify">Uma lista encadeada é estrutura de dados que representa um conjunto de dados organizados em ordem linear e dinâmica. Ela é composta por células também chamadas de nós (aqui adotaremos essa nomenclatura), que utilizando um ponteiro apontam para o próximo elemento da lista, e seu último elemento aponta parapara NULL, sinalizando que não existe um próximo elemento. Para que uma lista encadeada exista, basta guardar seu primeiro elemento. O primeiro é ligado no segundo, que é ligado no terceiro etc.</p>
+						<p align="justify">Uma lista encadeada é uma estrutura de dados que representa um conjunto de dados organizados em ordem linear e dinâmica. Ela é composta por células também chamadas de nós (aqui adotaremos essa nomenclatura), que utilizando um ponteiro apontam para o próximo elemento da lista, e seu último elemento aponta para NULL, sinalizando que não existe um próximo elemento. Para que uma lista encadeada exista, basta guardar seu primeiro elemento. O primeiro é ligado no segundo, que é ligado no terceiro etc.</p>
 						<p>Numa lista encadeada, para cada novo elemento inserido na estrutura, alocamos um espaço de memória para armazená-lo. Desta forma, o espaço total de memória gasto pela estrutura é proporcional ao número de elementos nela armazenado. No entanto, não podemos garantir que os elementos armazenados na lista ocuparão um espaço de memória contíguo, portanto não temos acesso direto aos elementos da lista. Para que seja possível percorrer todos os elementos da lista, devemos explicitamente guardar o encadeamento dos elementos, o que é feito armazenando-se, junto com a informação de cada elemento, um ponteiro para o próximo elemento da lista</p>
 						<h4>Primeiros passos para a construção de uma lista simplesmente encadeada</h4>
-						<p>Para representarmos um elemento da lista simplesmente encadeada (um nó) vamos utilizar uma struct., que chamaremos de No. Vejamos:</p>
+						<p>Para representarmos um elemento da lista simplesmente encadeada (um nó) vamos utilizar uma struct, que chamaremos de No. Vejamos:</p>
 						<pre>
 <span class="blue">struct</span> No{
     <span class="blue">int</span> num;
     <span class="blue">struct</span> No *prox;
 };
 <span class="green">typedef</span> <span class="blue">struct</span> No No;</pre>
-						<p>Cada nó de uma lista simplesmente encadeada irá possuir pelo menos (pode ser mais de um) um atributo que corresponde determinado dado a ser armazenado pela lista (int, float, char, struct..) e um ponteiro (do tipo No) que será utilizado para armazenar o endereço de memória do próximo nó (dessa maneira "ligamos" um nó a outro nó). Aqui utilizaremos uma lista para armazenar inteiros (int num) e o ponteiro do tipo No que apontará para o próximo nó sera *prox.</p>
+						<p>Cada nó de uma lista simplesmente encadeada irá possuir pelo menos (pode ser mais de um) um atributo que corresponde  a determinado dado a ser armazenado pela lista (int, float, char, struct..) e um ponteiro (do tipo No) que será utilizado para armazenar o endereço de memória do próximo nó (dessa maneira "ligamos" um nó a outro nó). Aqui utilizaremos uma lista para armazenar inteiros (int num) e o ponteiro do tipo No que apontará para o próximo nó sera *prox.</p>
 						<p>Para o controle da lista utilizaremos uma estrutura do tipo Lista. Ela contém dois ponteiros do tipo No (inicio e fim), que irão armazenar os endereço de memória do primeiro e do último elemento da lista respectivamente.</p>
 						<pre>
 <span class="com">/*registro do tipo Lista contento dois ponteiros do tipo nó para controlar a lista*/</span>
@@ -167,7 +167,7 @@
 <span class="com">/*necessitaremos também de dois ponteiros auxilares *aux e *anterior */</span>
 No *aux;
 No *anterior;</pre>
-						<p>Nesse ponto definiremos também uma função cria_lista( ). Ela será utilizada para criar uma lista, ou seja, alocará dinamicamente o espaço necessário para armazenar seus ponteiros (inicio e fim ) e irá inicializá-los com NULL. Isso indica que a lista inicialmente esta vazia.</p>
+						<p>Nesse ponto definiremos também uma função cria_lista( ). Ela será utilizada para criar uma lista, ou seja, alocará dinamicamente o espaço necessário para armazenar seus ponteiros (inicio e fim ) e irá inicializá-los com NULL. Isso indica que a lista inicialmente está vazia.</p>
 						<pre>
 Lista* cria_lista(){
     /*alocação do ponteiro li para controlar a lista*/
@@ -189,7 +189,7 @@ Lista* cria_lista(){
 				</div>
 				<div class="row">
 					<h3>Lista simplesmente encadeada e não ordenada</h3>
-					<p align="justify">Como o próprio nome descreve é uma lista simplesmente encadeada em que não há qualquer tipo de ordenação em relação aos nós pertencentes a lista.  A disposição dos mesmos dependerá da ordem e local (início ou fim da lista) em que forem inseridos.</p>
+					<p align="justify">Como o próprio nome descreve é uma lista simplesmente encadeada em que não há qualquer tipo de ordenação em relação aos nós pertencentes à lista.  A disposição dos mesmos dependerá da ordem e local (início ou fim da lista) em que forem inseridos.</p>
 					<p>Para este tipo de lista realizaremos 5 operações:</p>
 					<ul style="list-style-type:circle">
 							<li>Inserção no início da lista;</li>
@@ -361,12 +361,14 @@ Lista* cria_lista(){
     }
     getch();
 }			</pre>
-					<p>Vamos então remover o número 3:</p>
+					<p>Com base na lista criada anteriormente, faremos algumas remoções: </p>
+					<div class="row"><center><img class="img-responsive " src="img/list/insere4.PNG" alt="" align="middle"><center></div>
+					<p>Primeiramente, vamos remover o número 3:</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/remove1.PNG" alt="" align="middle"><center></div>
-					<p>Por fim removeremos o número 9.</p>
+					<p>E depois removeremos o número 9.</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/remove2.PNG" alt="" align="middle"><center></div>
 					<h4>Esvaziar lista</h4>
-					<p>Nesta última operação esvaziaremos a nossa lista, isto significa remover todos o seus nós restantes desalocando o espaço reservado para cada um. Esta é a implementação utilizada:</p>
+					<p>Nesta última operação esvaziaremos a nossa lista, isto significa remover todos os seus nós restantes desalocando o espaço reservado para cada um. Esta é a implementação utilizada:</p>
 					<pre>
 <span class="blue">void</span> esvaziar_lista(Lista *li){
      <span class="com">/*caso a lista esteja vazia*/</span>
@@ -395,7 +397,7 @@ Lista* cria_lista(){
 				
 				<div class="row">
 					<h3>Lista simplesmente encadeada e ordenada</h3>
-					<p align="justify">A diferença desse tipo de lista simplesmente encadeada é que ele utiliza determinado dado armazenado como parâmetro para a ordenação da lista. No nosso caso utilizaremos "num" para ordenar nossa lista de maneira crescente.</p>
+					<p align="justify">A diferença desse tipo de lista simplesmente encadeada é que ela utiliza determinado dado armazenado como parâmetro para a ordenação da lista. No nosso caso utilizaremos "num" para ordenar nossa lista de maneira crescente.</p>
 					<p>Para este tipo de lista realizaremos 4 operações:</p>
 					<ul style="list-style-type:circle">
 							<li>Inserção na lista;</li>
@@ -547,6 +549,8 @@ Lista* cria_lista(){
     }
     getch();
 }</pre>
+					<p>Com base na lista criada anteriormente, faremos algumas remoções: </p>
+					<div class="row"><center><img class="img-responsive " src="img/list/insere_seo4.PNG" alt="" align="middle"><center></div>
 					<p>Vamos então remover o número 6:</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/remove_seo1.PNG" alt="" align="middle"><center></div>
 					<p>Também removeremos o número 2.</p>
@@ -554,7 +558,7 @@ Lista* cria_lista(){
 					<p>Por fim removeremos o número 9.</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/insere_seo1.PNG" alt="" align="middle"><center></div>
 					<h4>Esvaziar lista</h4>
-					<p>Nesta última operação esvaziaremos a nossa lista, isto significa remover todos o seus restantes nós desalocando o espaço reservado para cada um. Esta é a implementação utilizada:</p>
+					<p>Nesta última operação esvaziaremos a nossa lista, isto significa remover todos os seus nós restantes desalocando o espaço reservado para cada um. Esta é a implementação utilizada:</p>
 					<pre>
 <span class="blue">void</span> esvaziar_lista(Lista *li){
      <span class="com">/*caso a lista esteja vazia*/</span>
@@ -591,7 +595,7 @@ Lista* cria_lista(){
 				</center>
 			<div class="row">
 					<h3>Listas Duplamente Encadeadas</h3>
-						<p align="justify">Assim como as listas simplesmente encadeadas, uma lista duplamente encadeada é uma estrutura de dados que representa um conjunto de dados organizados em ordem linear e dinâmica. Ela também é composta por células ou nós (nomenclatura adotada), no entanto, a conexão entre seus os elementos é feita através de dois ponteiros (um que aponta para o elemento anterior, e o outro, para o seguinte).</p>
+						<p align="justify">Assim como as listas simplesmente encadeadas, uma lista duplamente encadeada é uma estrutura de dados que representa um conjunto de dados organizados em ordem linear e dinâmica. Ela também é composta por células ou nós (nomenclatura adotada), no entanto, a conexão entre os seus elementos é feita através de dois ponteiros (um que aponta para o elemento anterior, e o outro, para o seguinte).</p>
 						<p>Numa lista duplamente encadeada, para cada novo elemento inserido na estrutura, alocamos um espaço de memória para armazená-lo. Desta forma, o espaço total de memória gasto pela estrutura é proporcional ao número de elementos nela armazenado. No entanto, não podemos garantir que os elementos armazenados na lista ocuparão um espaço de memória contíguo, portanto não temos acesso direto aos elementos da lista. Para que seja possível percorrer todos os elementos da lista, devemos explicitamente guardar o encadeamento dos elementos, o que é feito armazenando-se, junto com a informação de cada elemento, um ponteiro para o próximo elemento da lista e um ponteiro para o elemento anterior.</p>
 						<p>Características a destacar: </p>
 						<ul style="list-style-type:circle">
@@ -600,7 +604,7 @@ Lista* cria_lista(){
 							<li>Para acessar um elemento, a lista pode ser percorrida pelos dois lados.</li>
 					     </ul>
 						<h4>Primeiros passos para a construção de uma lista duplamente encadeada</h4>
-						<p>Para representarmos um elemento da lista (um nó) vamos utilizar uma struct., que chamaremos de No. Vejamos:</p>
+						<p>Para representarmos um elemento da lista (um nó) vamos utilizar uma struct, que chamaremos de No. Vejamos:</p>
 						<pre>
 <span class="blue">struct</span> No{
     <span class="blue">int</span> num;
@@ -623,7 +627,7 @@ Lista* cria_lista(){
 No *aux;
 No *aux2;
 No *anterior;</pre>
-						<p>Nesse ponto definiremos também uma função cria_lista( ). Ela será utilizada para criar uma lista, ou seja, alocará dinamicamente o espaço necessário para armazenar seus ponteiros (inicio e fim ) e irá inicializá-los com NULL. Isso indica que a lista inicialmente esta vazia.</p>
+						<p>Nesse ponto definiremos também uma função cria_lista( ). Ela será utilizada para criar uma lista, ou seja, alocará dinamicamente o espaço necessário para armazenar seus ponteiros (inicio e fim ) e irá inicializá-los com NULL. Isso indica que a lista inicialmente está vazia.</p>
 						<pre>
 Lista* cria_lista(){
     <span class="com">/*alocação do ponteiro li para controlar a lista*/</span>
@@ -646,7 +650,7 @@ Lista* cria_lista(){
 			
 			<div class="row">
 				<h3>Lista duplamente encadeada e não ordenada</h3>
-					<p align="justify">Como o próprio nome descreve é uma lista duplamente encadeada em que não há qualquer tipo de ordenação em relação aos nós pertencentes a lista.  A disposição dos mesmos dependerá da ordem e local (início ou fim da lista) em que forem inseridos.</p>
+					<p align="justify">Como o próprio nome descreve é uma lista duplamente encadeada em que não há qualquer tipo de ordenação em relação aos nós pertencentes à lista.  A disposição dos mesmos dependerá da ordem e local (início ou fim da lista) em que forem inseridos.</p>
 					<p>Para este tipo de lista realizaremos 6 operações:</p>
 					<ul style="list-style-type:circle">
 							<li>Inserção no início da lista;</li>
@@ -833,12 +837,16 @@ Lista* cria_lista(){
     }
     getch();
 }</pre>
-					<p>Vamos então remover o número 3:</p>
+					<p>Com base na lista criada anteriormente, faremos algumas remoções: </p>
+					<div class="row"><center><img class="img-responsive " src="img/list/insere_deno4.PNG" alt="" align="middle"><center></div>
+					<p>Primeiramente, vamos remover o número 9:</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/remove_deno1.PNG" alt="" align="middle"><center></div>
-					<p>Por fim removeremos o número 9.</p>
+					<p>Vamos então remover o número 3:</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/remove_deno2.PNG" alt="" align="middle"><center></div>
+					<p>Por fim removeremos o número 8.</p>
+					<div class="row"><center><img class="img-responsive " src="img/list/remove_deno3.PNG" alt="" align="middle"><center></div>
 					<h4>Esvaziar lista</h4>
-					<p>Nesta última operação esvaziaremos a nossa lista, isto significa remover todos o seus nós restantes desalocando o espaço reservado para cada um. Esta é a implementação utilizada:</p>
+					<p>Nesta última operação esvaziaremos a nossa lista, isto significa remover todos os seus nós restantes desalocando o espaço reservado para cada um. Esta é a implementação utilizada:</p>
 					<pre>
 <span class="blue">void</span> esvaziar_lista(Lista *li){
     <span class="com">/*caso a lista esteja vazia*/</span>
@@ -866,8 +874,8 @@ Lista* cria_lista(){
 				</div>
 				<div class="row">
 				<h3>Lista duplamente encadeada e ordenada</h3>
-					<p align="justify">A diferença desse tipo de lista duplamente encadeada é que ele utiliza determinado dado armazenado como parâmetro para a ordenação da lista. No nosso caso utilizaremos "num" para ordenar nossa lista de maneira crescente.</p>.
-					<p>Para este tipo de lista realizaremos 6 operações:</p>
+					<p align="justify">A diferença desse tipo de lista duplamente encadeada é que ela utiliza determinado dado armazenado como parâmetro para a ordenação da lista. No nosso caso utilizaremos "num" para ordenar nossa lista de maneira crescente.</p>
+					<p>Para este tipo de lista realizaremos 5 operações:</p>
 					<ul style="list-style-type:circle">
 							<li>Inserção na lista;</li>
 							<li>Impressão da lista do ínicio ao fim;</li>
@@ -922,13 +930,13 @@ Lista* cria_lista(){
 					<p>Na prática isso aconteceria da seguinte maneira:</p>
 					<p>Inicialmente temos os ponteiros inicio e fim apontados para null: </p>
 					<div class="row"><center><img class="img-responsive " src="img/list/inicio_lista.PNG" alt="" align="middle"><center></div>
-					<p>Primeiro: inseriremos o número 8 na lista.</p>
+					<p>Primeiro: inseriremos o número 5 na lista.</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/insere_deo1.PNG" alt="" align="middle"><center></div>
 					<p>Segundo: vamos inserir o número 9 na lista.</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/insere_deo2.PNG" alt="" align="middle"><center></div>
-					<p>Terceiro: vamos inserir o número 3 na lista:</p>
+					<p>Terceiro: vamos inserir o número 2 na lista:</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/insere_deo3.PNG" alt="" align="middle"><center></div>
-					<p>Por fim, vamos inserir o número 5 na lista:</p>
+					<p>Por fim, vamos inserir o número 7 na lista:</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/insere_deo4.PNG" alt="" align="middle"><center></div>
 					
 					<h4>Impressão da lista do início ao fim</h4>
@@ -1030,14 +1038,16 @@ Lista* cria_lista(){
     }
     getch();
 }</pre>
-					<p>Vamos então remover o número 5 da nossa lista:</p>
+					<p>Com base na lista criada anteriormente, faremos algumas remoções: </p>
+					<div class="row"><center><img class="img-responsive " src="img/list/insere_deo4.PNG" alt="" align="middle"><center></div>
+					<p>Primeiramente, vamos remover o número 5 da nossa lista:</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/remove_deo1.PNG" alt="" align="middle"><center></div>
 					<p>Depois removeremos o número 9.</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/remove_deo2.PNG" alt="" align="middle"><center></div>
 					<p>E por fim removeremos o número 2.</p>
 					<div class="row"><center><img class="img-responsive " src="img/list/remove_deo3.PNG" alt="" align="middle"><center></div>
 					<h4>Esvaziar lista</h4>
-					<p>Nesta última operação esvaziaremos a nossa lista, isto significa remover todos o seus nós restantes desalocando o espaço reservado para cada um. Esta é a implementação utilizada:</p>
+					<p>Nesta última operação esvaziaremos a nossa lista, isto significa remover todos os seus nós restantes desalocando o espaço reservado para cada um. Esta é a implementação utilizada:</p>
 					<pre>
 <span class="blue">void</span> esvaziar_lista(Lista *li){
     <span class="com">/*caso a lista esteja vazia*/</span>

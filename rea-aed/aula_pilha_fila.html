@@ -130,14 +130,14 @@
 		<div class="container">
 			<div class="col-md-8 col-md-offset-2 text-center wrap_title">
 				<h2>Pilha e Fila</h2>
-				<p class="lead" style="margin-top:0">O objetivo dessa unidade é apresentar o conteúdo relacionado a Pilha e Fila. Será feita
+				<p class="lead" style="margin-top:0">O objetivo dessa unidade é apresentar conteúdos relacionado às estruturas Pilha e Fila. Será feita
 				uma abordagem focando na linguagem C.</p>
 			</div>
 			<div class="col-md-10 col-md-offset-1  wrap_title">
 				<div class="row">
 					<h3>Introdução</h3>
-					<p align="justify">As estruturas de dados do tipo pilha e fila podem ser consideradas listas especializadas por possuírem características particulares. Porém possuem operações semelhantes, como por exemplo inserção de elemento, exclusão de elemento e impressão de elementos.</p>
-					<p align="justify">Podemos citar também que ambas representam conjuntos de dados organizados de maneira linear. Quando são representadas por vetores, tem-se o uso de endereços contíguos na memória e a ordem é determinada por seus índices. Neste caso são chamadas de pilha e fila estáticas. Já quando são representadas por elementos alocados dinamicamente na memória e encadeados por ponteiros, têm-se representações denominadas pilhas e filas dinâmicas.</p>
+					<p align="justify">As estruturas de dados do tipo pilha e fila podem ser consideradas listas especializadas por possuírem características particulares. Porém, possuem operações semelhantes, por exemplo, inserção de elemento, exclusão de elemento e impressão de elementos.</p>
+					<p align="justify">Podemos citar também que ambas representam conjuntos de dados organizados de maneira linear. Quando são representadas por vetores, tem-se o uso de endereços contíguos na memória e a ordem é determinada por seus índices. Neste caso, são chamadas de pilha e fila estáticas. Já quando são representadas por elementos alocados dinamicamente na memória e encadeados por ponteiros, têm-se representações denominadas pilhas e filas dinâmicas.</p>
 					<p align="justify">Aqui trataremos de pilhas e filas dinâmicas.</p>
 				</div>
 				<div class="row">
@@ -160,7 +160,7 @@
 	<span  class="blue">struct</span> Elemento *prox;
 };
 <span class="green">typedef</span> <span class="blue">struct</span> Elemento Elemento;</pre>
-					<p>Portanto teremos uma pilha para o armazenamento de inteiros.</p>
+					<p>Portanto, teremos uma pilha para o armazenamento de inteiros.</p>
 					<p>Para o controle da pilha utilizaremos uma estrutura do tipo Pilha. Ela contém um ponteiro do tipo No (topo), que irá armazenar o endereço de memória do elemento que estiver no topo da pilha (último elemento inserido).</p>
 					<pre>
 <span class="com">/*registro do tipo Pilha contento um ponteiro "topo" do tipo Elemento para controlar a pilha*/</span>
@@ -168,11 +168,11 @@
     <span class="blue">struct</span> Elemento *topo; <span class="com">/*aponta para o elemento qu esta Elemento topo da pilha*/</span>
 };
 <span class="green">typedef</span> <span class="blue">struct</span> Pilha Pilha;</pre>
-					<p>Para auxiliar em algumas funções, é necessário utilizar um ponteiro auxiliare do tipo No. Então definimos abaixo:</p>
+					<p>Para auxiliar em algumas funções, é necessário utilizar um ponteiro auxiliar do tipo No. Então definimos abaixo:</p>
 					<pre>
 <span class="com">/*ponteiro auxiliar*/</span>
 Elemento *aux;</pre>
-					<p>Nesse ponto definiremos também uma função cria_pilha( ). Ela será utilizada para criar uma pilha, ou seja, alocará dinamicamente o espaço necessário para armazenar seu ponteiro "topo" e irá inicializá-lo com NULL. Isso indica que inicialmente a pilha esta vazia.</p>
+					<p>Nesse ponto definiremos também uma função cria_pilha( ). Ela será utilizada para criar uma pilha, ou seja, alocará dinamicamente o espaço necessário para armazenar seu ponteiro "topo" e irá inicializá-lo com NULL. Isso indica que inicialmente a pilha está vazia.</p>
 					<pre>
 Pilha* cria_pilha(){
     <span class="com">/*alocação do ponteiro pi para controlar a pilha*/</span>
@@ -210,9 +210,9 @@ Pilha* cria_pilha(){
 					<div class="row"><center><img class="img-responsive " src="img/pilha_fila/inicio_pilha.PNG" alt="" align="middle"><center></div>
 					<p>Agora inseriremos o número 8 na pilha.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pilha_fila/insere_pilha1.PNG" alt="" align="middle"><center></div>
-					<p>Depois vamos inserir o número 6 na pilha.</p>
+					<p>Depois vamos inserir o número 3 na pilha.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pilha_fila/insere_pilha2.PNG" alt="" align="middle"><center></div>
-					<p>Por fim, vamos inserir o número 2:</p>
+					<p>Por fim, vamos inserir o número 6:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pilha_fila/insere_pilha3.PNG" alt="" align="middle"><center></div>
 					
 					<h4>Consultar toda pilha</h4>
@@ -233,7 +233,7 @@ Pilha* cria_pilha(){
 	}
 	getch();
 }		</pre>
-					<p>A saída seria: 2 6 8.</p>
+					<p>A saída seria: 6 3 8.</p>
 					<h4>Remover elemento</h4>
 					<p>Para removermos um elemento da pilha (este elemento será o último inserido), utilizaremos a seguinte função:</p>
 					<pre>
@@ -250,12 +250,12 @@ Pilha* cria_pilha(){
 	getch();
 }
 </pre>
-					<p>Vamos então remover um elemento da pilha, como o último elemento inserido foi o 2, então será ele o removido:</p>
+					<p>Vamos então remover um elemento da pilha, como o último elemento inserido foi o 6, então será ele o removido:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pilha_fila/insere_pilha2.PNG" alt="" align="middle"><center></div>
-					<p>Repetindo o processo, como 6 está no topo da pilha, então será ele o removido:</p>
+					<p>Repetindo o processo, como 3 está no topo da pilha, então será ele o removido:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pilha_fila/insere_pilha1.PNG" alt="" align="middle"><center></div>
 					<h4>Esvaziar pilha</h4>
-					<p>Nesta última operação esvaziaremos a nossa pilha, ou seja, removeremos todos o seus elementos restantes. Esta é a implementação utilizada:</p>
+					<p>Nesta última operação esvaziaremos a nossa pilha, ou seja, removeremos todos os seus elementos restantes. Esta é a implementação utilizada:</p>
 					<pre>
 <span class="com">/*a pilha será esvaziada e o espaço ocupado por ela será desalocado*/</span>
 <span class="blue">void</span> esvazia_pilha(Pilha *pi){
@@ -286,7 +286,7 @@ Pilha* cria_pilha(){
 				</center>
 				<div class="row">
 					<h3>Fila</h3>
-					<p>Fila é uma estrutura do tipo FIFO (First In First Out), ou seja, o primeiro elemento inserido será o primeiro a ser removido. Cada elemento da estrutura, pode armazenar um ou vários dados e um ponteiro para o próximo elemento, o que permite o encadeamento e mantêm uma estrutura linear.</p>
+					<p>Fila é uma estrutura do tipo FIFO (First In First Out), ou seja, o primeiro elemento inserido será o primeiro a ser removido. Cada elemento da estrutura pode armazenar um ou vários dados e um ponteiro para o próximo elemento, o que permite o encadeamento e mantêm uma estrutura linear.</p>
 					<p>A estrutura do tipo fila possui um ponteiro denominado INICIO, onde todas operações de remoção acontecem e outro denominado FIM, onde acontecem as inserções. </p>
 					<p>Serão abordadas as seguintes operações:</p>
 					<ul style="list-style-type:circle">
@@ -305,7 +305,7 @@ Pilha* cria_pilha(){
 	<span class="blue">struct</span> Elemento *prox;
 };
 <span class="green">typedef</span> <span class="blue">struct</span> Elemento Elemento;</pre>
-					<p>Portanto teremos uma fila para o armazenamento de inteiros.</p>
+					<p>Portanto, teremos uma fila para o armazenamento de inteiros.</p>
 					<p>Para o controle da fila utilizaremos uma estrutura do tipo Lista. Ela contém dois ponteiros do tipo No (inicio e fim), que irão armazenar os endereço de memória do primeiro e do último elemento da pilha respectivamente.</p>
 					<pre>
 <span class="com">/*registro do tipo Fila contento dois ponteiros do tipo nó para controlar a fila*/</span>
@@ -405,7 +405,7 @@ Fila* cria_fila(){
 					<p>Repetindo o processo, como 9 foi o penúltimo elemento a ser inserido, então será ele o removido:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pilha_fila/remove_fila2.PNG" alt="" align="middle"><center></div>
 					<h4>Esvaziar fila</h4>
-					<p>Nesta última operação esvaziaremos a nossa fila, ou seja, removeremos todos o seus elementos restantes. Esta é a implementação utilizada:</p>
+					<p>Nesta última operação esvaziaremos a nossa fila, ou seja, removeremos todos os seus elementos restantes. Esta é a implementação utilizada:</p>
 					<pre>
 <span class="com">/*a fila será esvaziada e o espaço ocupado por ela será desalocado*/</span>
 void esvazia_fila(Fila *fi){

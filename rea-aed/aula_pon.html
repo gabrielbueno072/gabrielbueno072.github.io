@@ -137,8 +137,8 @@
 				<div class="row">
 					<h3>Introdução</h3>
 					<p align="justify">Ponteiros são um dos recursos mais poderosos da linguagem C. Qualquer programa de utilidade prática escrito em C dificilmente dispensará o seu uso. A tentativa de evitá-los implicará quase sempre em códigos maiores e de execução mais lenta.</p>
-					<p align="justify">Ponteiros ou apontadores, são variáveis que armazenam o endereço de memória de outras variáveis. Dizemos que um ponteiro “aponta” para uma variável quando contém o endereço da mesma.</p>
-					<p align="justify">Os ponteiros podem apontar para qualquer tipo de variável. Portanto temos ponteiros para int, float, double, etc.
+					<p align="justify">Ponteiros ou apontadores são variáveis que armazenam o endereço de memória de outras variáveis. Dizemos que um ponteiro “aponta” para uma variável quando contém o endereço da mesma.</p>
+					<p align="justify">Os ponteiros podem apontar para qualquer tipo de variável. Portanto, temos ponteiros para int, float, double etc.
 					</p>
 					<h4>Por que usar ponteiros?</h4>
 						<p align="justify">Ponteiros são muito úteis quando uma variável tem que ser acessada em diferentes partes de um programa. Neste caso, o código pode ter vários ponteiros espalhados por diversas partes do programa, 
@@ -155,8 +155,8 @@
 					<p align="justify">Um ponteiro irá sempre armazenar o endereço do primeiro bloco (primeiro byte) e também saberá quantos bytes cada variável ocupa, ou seja, quais são blocos vizinhos de memória que pertencem a determinada variável.</p>
 					<p>Exemplos</p>
 					<p>No exemplo abaixo declaramos uma variável int nome e um ponteiro int ptr_nome. A variável inteira ocupa 4 bytes de memória, ou seja, 4 blocos de memória, cada bloco com um endereço.</p>
-					<p>Suponhamos que o endereço do primeiro bloco de nome seja 4052, se caso apontarmos o ponteiro ptr_nome para nome, em ptr_nome ficará armazenado 4052.</p>
-					<p>Porém por ser também um int ptr_nome saberá que os próximos 3 blocos de memória pertencem a variável nome, ou seja, os endereços 4053, 4054 e 4055.</p>
+					<p>Suponha que o endereço do primeiro bloco de nome seja 4052. Caso apontarmos o ponteiro ptr_nome para nome, em ptr_nome ficará armazenado 4052.</p>
+					<p>Porém, por ser também um int, ptr_nome saberá que os próximos 3 blocos de memória pertencem à variável nome, ou seja, os endereços 4053, 4054 e 4055.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/modelo.PNG" alt="" align="middle"><center></div>
 				</div>
 				<div class="row">
@@ -167,7 +167,7 @@
 					<p>Criamos um inteiro count com o valor 10 e um apontador para um inteiro pt. A expressão &count nos dá o endereço de count, o qual armazenamos em pt. Simples, não é? Repare que não alteramos o valor de count, que continua valendo 10.</p>
 					<p>Como nós colocamos um endereço em pt, ele está agora "liberado" para ser usado. Podemos, por exemplo, alterar o valor de count usando pt. Para tanto vamos usar o operador "inverso" do operador &. É o operador *.</p>
 					<p>O operador * possui 2 utilizações distintas no uso de ponteiros.</p>
-					<p>Se utilizado na declaração de uma variável, indica que a mesma é um ponteiro, durante a implementação do programa seu uso é referente a manipulação do conteúdo  da variável.</p>
+					<p>Se utilizado na declaração de uma variável, indica que a mesma é um ponteiro. Durante a implementação do programa seu uso é referente à manipulação do conteúdo  da variável.</p>
 					<p>O operador & é utilizado para a manipulação do endereço de memória</p>
 					<p>No exemplo acima, uma vez que fizemos pt=&count a expressão *pt é equivalente ao próprio count (conteúdo da variável). Isto significa que, se quisermos mudar o valor de count para 12, basta fazer *pt=12.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem5.PNG" alt="" align="middle"><center></div>
@@ -179,7 +179,7 @@
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem6.PNG" alt="" align="middle"><center></div>
 					<h4>INCREMENTO e DECREMENTO.</h4>
 					<p>Quando incrementamos um ponteiro ele passa a apontar para o próximo valor do mesmo tipo para o qual o ponteiro aponta. Isto é, se temos um ponteiro para um inteiro e o incrementamos ele passa a apontar para o próximo inteiro. Esta é mais uma razão pela qual 
-					 o compilador precisa saber o tipo de um ponteiro: se você incrementa um ponteiro char* ele anda 1 byte na memória e se você incrementa um ponteiro double* ele anda 8 bytes na memória. O decremento funciona semelhantemente. Supondo que p é um ponteiro, as operações são escritas como:</p>
+					 o compilador precisa saber o tipo de um ponteiro: se você incrementa um ponteiro char* ele anda 1 byte na memória e se você incrementa um ponteiro double* ele anda 8 bytes na memória. O decremento funciona de modo semelhante. Supondo que p é um ponteiro, as operações são escritas como:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem7.PNG" alt="" align="middle"><center></div>
 					<p>Lembrando que estamos falando de operações com ponteiros e não de operações com o conteúdo das variáveis para as quais eles apontam. Para incrementar ou decrementar o conteúdo da variável apontada pelo ponteiro p, faz-se:
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem8.PNG" alt="" align="middle"><center></div>
@@ -192,7 +192,7 @@
 					<h4>COMPARAÇÃO</h4>
 					<p>Bem, em primeiro lugar, podemos saber se dois ponteiros são iguais ou diferentes (== e !=), ou seja, se apontam para a mesma posição na memória ou posições diferentes. No caso de operações do tipo >, <, >= e <= estamos comparando qual ponteiro aponta para uma posição mais alta na memória. Então uma comparação entre ponteiros pode nos dizer qual dos dois está "mais adiante" na memória. A comparação entre dois ponteiros se escreve como a comparação entre outras duas variáveis quaisquer:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem11.PNG" alt="" align="middle"><center></div>
-					<p>Há entretanto operações que você não pode efetuar num ponteiro. Você não pode dividir ou multiplicar ponteiros, adicionar dois ponteiros, adicionar ou subtrair floats ou doubles de ponteiros.</p>
+					<p>Há, entretanto, operações que você não pode efetuar num ponteiro. Você não pode dividir ou multiplicar ponteiros, adicionar dois ponteiros, adicionar ou subtrair floats ou doubles de ponteiros.</p>
 				</div>
 				<div class="row">
 					<h3>Impressão de Ponteiros</h3>
@@ -229,7 +229,7 @@
 					<p>Se, em vez de int, os dados e ponteiro fossem, por exemplo, tipo double (8 bytes), cada incremento ou decremento unitário do ponteiro fariam seu valor mudar de 8 bytes, permitindo o correto acesso a cada elemento. Isso significa que o programador não precisa se preocupar com o real conteúdo do ponteiro. Basta considerar as correspondências unitárias, isto é, se o ponteiro é incrementado ou decrementado de um, ele aponta para o próximo elemento 
 					ou para o elemento anterior.</p>
 					<p>Cabe, entretanto, ao programador manter o ponteiro dentro dos limites do vetor. Se ultrapassar e o valor for modificado, resultados imprevisíveis podem ocorrer. Em geral, os compiladores não verificam isso.</p>
-					<p>A inicialização do ponteiro foi proporcionada pela linha já vista</p>
+					<p>A inicialização do ponteiro foi proporcionada pela linha já vista:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem17.PNG" alt="" align="middle"><center></div>
 					<p>Mas também poderia ter sido feita da seguinte forma tendo o mesmo efeito:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem18.PNG" alt="" align="middle"><center></div>
@@ -241,24 +241,24 @@
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem19.PNG" alt="" align="middle"><center></div>
 					<p>Podemos reescrevê-lo usando ponteiros:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem20.PNG" alt="" align="middle"><center></div>
-					<p>No primeiro programa, cada vez que se faz matriz[i][j] o programa tem que calcular o deslocamento para dar ao ponteiro. Ou seja, o programa tem que calcular 2500 deslocamentos. No segundo programa o único cálculo que deve ser feito é o de um incremento de ponteiro. Fazer 2500 incrementos em um ponteiro é muito mais rápido que calcular 2500 deslocamentos completos.</p>
+					<p>No primeiro programa, cada vez que se faz matriz[i][j], com base nos valores de i e j, o programa calcula o deslocamento para dar ao ponteiro. Ou seja, o programa tem que calcular 2500 deslocamentos. No segundo programa o único cálculo que deve ser feito é o de um incremento de ponteiro. Fazer 2500 incrementos em um ponteiro é muito mais rápido que calcular 2500 deslocamentos completos.</p>
 				</div>
 				<div class="row">
 					<h3>Ponteiros para estruturas</h3>
-					<p>Ponteiros para estruturas são escritos de forma similar aos anteriores. A principal diferença é o uso do operador -> para acesso aos membros. Seja exemplo a seguir:</p>
+					<p>Ponteiros para estruturas são escritos de forma similar aos anteriores. A principal diferença é o uso do operador -> para acesso aos membros. Considere o exemplo a seguir:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem21.PNG" alt="" align="middle"><center></div>
 					<p>No programa acima, após a declaração da estrutura telefone, é definido um ponteiro do tipo telefone (ptr) de forma similar aos ponteiros de outros tipos.</p>
-					<p>A linha ptr = &pedro; inicializa o ponteiro ptr. Em sequência na linha abaixo podemos observar o uso do operador de ponteiro para estrutura como argumento de printf.</p>
+					<p>A linha ptr = &pedro; inicializa o ponteiro ptr. Na sequência na linha abaixo podemos observar o uso do operador de ponteiro para estrutura como argumento de printf.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem22.PNG" alt="" align="middle"><center></div>
 					<p>Essa declaração tem o mesmo efeito de pedro.nome quando não se utiliza ponteiro.</p>
 				</div>
 				<div class="row">
 					<h3>Ponteiros para ponteiros</h3>
-					<p>Note que um ponteiro é uma variável como outra qualquer, e por isso também ocupa espaço em memória. Para obtermos o endereço que um ponteiro ocupa em e memória, usamos o operador &, assim como fazemos nas variáveis comuns. Mas e se estivéssemos interessados em guardar o endereço de um ponteiro, que tipo de váriavel deveria recebe-lo? A resposta é: um ponteiro, isto é, um ponteiro para outro ponteiro.</p>
-					<p>Como já sabemos, para declarar um ponteiro, deve-se verificar o tipo da variável que ele irá apontar e colocar um asterisco entre o tipo da variável e o nome do ponteiro. Agora, para se guardar o endereço de um ponteiro, os mesmos passos devem ser seguidos. Primeiramente verificamos os tipo da variável que será apontada (int *) e colocamos um asterisco entre o tipo e nome do ponteiro. Vejamos:</p>
+					<p>Note que um ponteiro é uma variável como outra qualquer, e por isso também ocupa espaço em memória. Para obtermos o endereço que um ponteiro ocupa em memória, usamos o operador &, assim como fazemos nas variáveis comuns. Mas e se estivéssemos interessados em guardar o endereço de um ponteiro, que tipo de váriavel deveria recebê-lo? A resposta é: um ponteiro, isto é, um ponteiro para outro ponteiro.</p>
+					<p>Como já sabemos, para declarar um ponteiro, deve-se verificar o tipo da variável que ele irá apontar e colocar um asterisco entre o tipo da variável e o nome do ponteiro. Agora, para se guardar o endereço de um ponteiro, os mesmos passos devem ser seguidos. Primeiramente, verificamos o tipo da variável que será apontada (int *) e colocamos um asterisco entre o tipo e nome do ponteiro. Vejamos:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem26.PNG" alt="" align="middle"><center></div>
-					<p>Primeiramente declaramos uma variável int x e a inicializamos, depois declaramos um pointeiro(p_x) e o fizemos apontar para x . Por fim, declaramos um ponteiro que irá apontar para p_x, ou seja, um ponteiro para ponteiro. Note que C não impõe limites para o número de asteriscos em uma variável.</p> 
-					<p>No exemplo a seguir, todos os printf irão escrever a mesma coisa na tela.</p>
+					<p>Primeiramente, declaramos uma variável int x e a inicializamos, depois declaramos um ponteiro(p_x) e o fizemos apontar para x . Por fim, declaramos um ponteiro que irá apontar para p_x, ou seja, um ponteiro para ponteiro. Note que C não impõe limites para o número de asteriscos em uma variável.</p> 
+					<p>No exemplo a seguir, todos os printf escreverão o mesmo conteúdo na tela.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem27.PNG" alt="" align="middle"><center></div>
 				</div>
 				<div class="row">
@@ -272,8 +272,8 @@
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem25.PNG" alt="" align="middle"><center></div>
 					<p>Neste exemplo, definimos a função swap( ) como uma função que toma como argumentos dois ponteiros para inteiros; a função faz a troca entre os valores apontados pelos ponteiros. Já na função main( ), passamos os endereços das variáveis para a função swap(), de modo que a função swap( ) possa modificar variáveis locais de outra função. O único possível inconveniente é que, quando usarmos a função, 
 						teremos de lembrar de colocar um & na frente das variáveis que estivermos passando para a função.</p>
-					<p>Se você pensar bem, já vimos uma função em que passamos os argumentos precedidos de &: é a função scanf( )! Por que fazemos isso? É simples: chamamos a função scanf( ) para que ela ponha nas nossas variáveis valores digitados pelo usuário. Ora, essas variáveis são locais, e portanto só podem ser alteradas por outras funções através de ponteiros!</p>
-					<p>Quando uma função recebe como parâmetros os endereços e não os valores das variáveis, dizemos que estamos a fazer uma chamada por referência; é o caso desse último exemplo. Quando passamos diretamente os valores das variáveis para uma função, dizemos que é uma chamada por valor; foi o caso do segundo exemplo. </p>
+					<p>Se você pensar bem, já vimos uma função em que passamos os argumentos precedidos de &: é a função scanf( )! Por que fazemos isso? É simples: chamamos a função scanf( ) para que ela atribua às nossas variáveis valores digitados pelo usuário. Ora, essas variáveis são locais, e portanto só podem ser alteradas por outras funções através de ponteiros!</p>
+					<p>Quando uma função recebe como parâmetros os endereços e não os valores das variáveis, dizemos que estamos fazendo uma chamada por referência; é o caso desse último exemplo. Quando passamos diretamente os valores das variáveis para uma função, dizemos que é uma chamada por valor; foi o caso do segundo exemplo. </p>
 				</div>
 				<center>
 				<h3>Video Explicativo - Ponteiros 2</h3>
