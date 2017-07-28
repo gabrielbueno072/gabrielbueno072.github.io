@@ -187,6 +187,15 @@
 					<div class="row"><center><img class="img-responsive " src="img/arv/consultas.PNG" alt="" align="middle"><center></div>
 					</ul>
 				</div>
+				<center>
+					<h3>Video Explicativo - Árvore Binária Parte 1</h3>
+							<p>                                      </p>
+							<video width=80% height="315" class="img-responsive" controls>
+							  <source src="video/arvb_pt1.mp4" type="video/mp4">
+							  <source src="movie.ogg" type="video/ogg">
+							  Your browser does not support the video tag.
+							</video>
+				</center>
 				<div class="row">
 					<h3>Implementação</h3>
 					<h4>Primeiros passos para a construção de uma árvore binária</h4>
@@ -233,7 +242,7 @@ Elemento *aux2;</pre>
 Arvore* cria_arvore(){
     <span class="com">/*alocação do ponteiro arv para controlar a árvore*/</span>
     Arvore* arv = (Arvore*) malloc(<span class="green">sizeof</span>(Arvore));
-    if(arv != <span class="green">NULL</span>){
+    <span class="green">if</span>(arv != <span class="green">NULL</span>){
         arv->raiz= <span class="green">NULL</span>;  <span class="com">/*a pilha inicia-se vazia, portanto seu topo é igual a NULL*/</span>
     }
     <span class="green">return</span> arv;
@@ -461,6 +470,15 @@ Pilha* cria_pilha(){
 					<p>Com base na árvore final apresentada nos processos de inserção teremos o seguinte resultado da consulta:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/pre_ordem.PNG" alt="" align="middle"><center></div>
 					<div class="row"><center><img class="img-responsive " src="img/arv/consulta_preordem.PNG" alt="" align="middle"><center></div>
+					<center>
+					<h3>Video Explicativo - Árvore Binária Parte 2</h3>
+							<p>                                      </p>
+							<video width=80% height="315" class="img-responsive" controls>
+							  <source src="video/arvb_pt2.mp4" type="video/mp4">
+							  <source src="movie.ogg" type="video/ogg">
+							  Your browser does not support the video tag.
+							</video>
+				</center>
 					<h4>Consultar árvore em pós-ordem</h4>
 					<p>Para realizarmos a consulta em pós-ordem na árvore utilizaremos a seguinte implementação:</p>
 					<pre>

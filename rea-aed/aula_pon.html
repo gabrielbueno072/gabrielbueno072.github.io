@@ -136,7 +136,7 @@
 			<div class="col-md-10 col-md-offset-1  wrap_title">
 				<div class="row">
 					<h3>Introdução</h3>
-					<p align="justify">Ponteiros são um dos recursos mais poderosos da linguagem C e de outras. Qualquer programa de utilidade prática escrito em C dificilmente dispensará o uso de ponteiros. A tentativa de evitá-los implicará quase sempre códigos maiores e de execução mais lenta.</p>
+					<p align="justify">Ponteiros são um dos recursos mais poderosos da linguagem C. Qualquer programa de utilidade prática escrito em C dificilmente dispensará o seu uso. A tentativa de evitá-los implicará quase sempre em códigos maiores e de execução mais lenta.</p>
 					<p align="justify">Ponteiros ou apontadores, são variáveis que armazenam o endereço de memória de outras variáveis. Dizemos que um ponteiro “aponta” para uma variável quando contém o endereço da mesma.</p>
 					<p align="justify">Os ponteiros podem apontar para qualquer tipo de variável. Portanto temos ponteiros para int, float, double, etc.
 					</p>
@@ -147,7 +147,7 @@
 				</div>
 				<div class="row">
 					<h3>Declaração de um ponteiro</h3>
-					<p align="justify">Para declarar um ponteiro em C basta colocarmos um asterisco - * - antes do nome desse ponteiro. Portanto temos a seguinte forma geral:</p>
+					<p align="justify">Para declarar um ponteiro em C basta colocarmos um asterisco - * - antes do nome desse ponteiro.</p>
 					<p align="justify">Exemplos:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem1.PNG" alt="" align="middle"><center></div>
 					<p align="justify">Como visto acima ponteiros são variáveis que armazenam endereço, e endereço são apenas números, por que então declarar ponteiros com os tipos (int, float, char etc)?</p>
@@ -215,8 +215,8 @@
 				<div class="row">
 					<h3>Ponteiros para vetores</h3>
 					<p>Ponteiros oferecem um eficiente e prático meio de acesso e manipulação dos elementos de um vetor. Sejam, por exemplo, um vetor e um ponteiro:</p>
-					<p>A linha acima inicializa o ponteiro, associando-o ao primeiro elemento do vetor.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem14.PNG" alt="" align="middle"><center></div>
+					<p>A linha acima inicializa o ponteiro, associando-o ao primeiro elemento do vetor.</p>
 					<p>E a figura abaixo dá uma ideia gráfica da operação.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem15.PNG" alt="" align="middle"><center></div>
 					<p>Obs: o valor 4052 é meramente ilustrativo. Depende da localização de memória onde o programa é carregado. </p>
@@ -247,10 +247,10 @@
 					<h3>Ponteiros para estruturas</h3>
 					<p>Ponteiros para estruturas são escritos de forma similar aos anteriores. A principal diferença é o uso do operador -> para acesso aos membros. Seja exemplo a seguir:</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem21.PNG" alt="" align="middle"><center></div>
-					<p>No programa acima, após a declaração da estrutura, é definido um ponteiro dela (ptr) de forma similar aos ponteiros de outros tipos.</p>
-					<p>A linha ptr = &pedro; inicializa o ponteiro e, como argumento de printf, é usado o operador de ponteiro para estrutura</p>
+					<p>No programa acima, após a declaração da estrutura telefone, é definido um ponteiro do tipo telefone (ptr) de forma similar aos ponteiros de outros tipos.</p>
+					<p>A linha ptr = &pedro; inicializa o ponteiro ptr. Em sequência na linha abaixo podemos observar o uso do operador de ponteiro para estrutura como argumento de printf.</p>
 					<div class="row"><center><img class="img-responsive " src="img/pon/imagem22.PNG" alt="" align="middle"><center></div>
-					<p>Essa declaração tem o mesmo efeito da sem ponteiro pedro.nome.</p>
+					<p>Essa declaração tem o mesmo efeito de pedro.nome quando não se utiliza ponteiro.</p>
 				</div>
 				<div class="row">
 					<h3>Ponteiros para ponteiros</h3>

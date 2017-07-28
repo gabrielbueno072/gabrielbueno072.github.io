@@ -136,7 +136,7 @@
 			<div class="col-md-10 col-md-offset-1  wrap_title">
 					<div class="row">
 					<h3>Recursividade</h3>
-						<p>A recursividade pode ser vista por muitos como um bicho de sete cabeça, porém muitas vezes pode ser a melhor maneira de resolver um determinado problema, também pode ser a forma mais legível e simples do que a forma interativa.
+						<p>A recursividade pode ser vista por muitos como um bicho de sete cabeças, porém muitas vezes pode ser a melhor maneira de resolver um determinado problema, além de ser uma forma mais legível e simples do que a forma interativa.
 								Então vamos tentar entender como funciona a recursão:</p>
 					</div>
 					<div class="row">
@@ -161,7 +161,6 @@
 						<p>Assim como uma boneca russa tem dentro de si uma boneca menor, que tem dentro de si uma boneca ainda menor, até chegarmos a uma boneca pequena demais para ter outra dentro de si, a recursividade soluciona um problema dividindo-o em 
 						instâncias menores (chamadas recursivas) até chegar ao ponto em que não conseguimos mais dividir esse problema (caso base).</p>
 						<p>Em uma função recursiva, a cada chamada é criada na memória uma nova ocorrência da função com comandos e variáveis “isolados” das ocorrências anteriores. A função é executada até que todas as ocorrências tenham sido resolvidas.</p>
-						<p>Porém um problema que surge ao usar a recursividade é como fazê-la parar. Caso o programador não tenha cuidado é fácil cair num loop infinito recursivo o qual pode inclusive esgotar a memória</p>
 						<h4>Vantagens da recursividade</h4>
 						<p>Torna a escrita do código mais simples e elegante, tornando-o fácil de entender e de manter.</p>
 						<h4>Desvantagens da recursividade</h4>
@@ -173,58 +172,57 @@
 						<h4>Exemplo clássico de recursividade: Fatorial</h4>
 						<p>Vamos fazer o cálculo do fatorial de um dado número. Primeiramente utilizaremos uma solução iterativa:</p>
 						<pre>
-#include < stdio.h >
-int fatorial(int num){
-	int i, resultado = 1;
-	for(i = 1; i <= num; i++){
+<span class="biblio">#include < stdio.h ></span>
+<span class="blue">int</span> fatorial(<span class="blue">int</span> num){
+    <span class="blue">int</span> i, resultado = 1;
+    <span class="green">for</span>(i = 1; i <= num; i++){
 	resultado = resultado * i;
-	}
-	return resultado;
-}
-int main(){
-	int num, resultado;
-	scanf("%d", &num);
-	if(num < 0){
-        printf("Erro: Numero negativo!");
-    }else{
-        resultado = fatorial(num);
-        printf("Resultado: %d", resultado);
     }
-	return 0;
+    <span class="green">return</span> resultado;
+}
+<span class="blue">int </span>main(){
+    <span class="blue">int</span> num, resultado;
+    scanf(<span class="text">"%d"</span>, &num);
+    <span class="green">if</span>(num < 0){
+        printf(<span class="text">"Erro: Numero negativo!"</span>);
+    }<span class="green">else</span>{
+        resultado = fatorial(num);
+        printf(<span class="text">"Resultado: %d"</span>, resultado);
+    }
+    <span class="green">return</span> <span class="number">0</span>;
 }
 </pre>
 						<p>Agora uma solução recursiva:</p>
 <pre>
-/*Cálculo de fatorial com função recursiva*/
-#include < stdio.h >
-/*Função recursiva que calcula o fatorial de um numero inteiro n*/
-int fatorial(int n){
-	int vfat;
-	/*Caso base: fatorial de n == 0 retorna 1*/
-	if (n == 0){
-		return 1;
-	}
-	else{
-	/*Chamada recursiva*/
-		vfat = n * fatorial(n - 1);
-		return vfat;
-	}
+<span class="com">/*Cálculo de fatorial com função recursiva*/</span>
+<span class="biblio">#include < stdio.h ></span>
+<span class="com">/*Função recursiva que calcula o fatorial de um numero inteiro n*/</span>
+<span class="blue">int</span> fatorial(<span class="blue">int</span> n){
+    <span class="blue">int</span> vfat;
+    <span class="com">/*Caso base: fatorial de n == 0 retorna 1*/</span>
+    <span class="green">if</span>(n == 0){
+        <span class="green">return</span> <span class="number">1</span>;
+    }<span class="green">else</span>{
+        <span class="com">/*Chamada recursiva*/</span>
+        vfat = n * fatorial(n - 1);
+        <span class="green">return</span> vfat;
+    }
 }
-int main(){
-	int numero, fat;
-	printf("Digite o numero que deseja calcular o fatorial: ");
-	scanf("%d",&numero);
-	/*chamada da função fatorial*/
-	if(numero < 0){
-		printf("Erro: Numero negativo!");
-	}else{
-		fat = fatorial(numero);
-		printf("Fatorial de %d = %d",numero,fat);
-	}
-	return 0;
+<span class="blue">int</span> main(){
+    <span class="blue">int</span> numero, fat;
+    printf(<span class="text">"Digite o numero que deseja calcular o fatorial: "</span>);
+    scanf(<span class="text">"%d"</span>,&numero);
+    /*chamada da função fatorial*/</span>
+    <span class="green">if</span>(numero < 0){
+        printf(<span class="text">"Erro: Numero negativo!"</span>);
+    }<span class="green">else</span>{
+        fat = fatorial(numero);
+        printf(<span class="text">"Fatorial de %d = %d"</span>,numero,fat);
+    }
+    <span class="green">return</span> <span class="number">0</span>;
 }
 </pre>
-						<p>Perceba que na solução acima dividimos o nosso problema em instâncias menores do problema. Nos temos o caso base que é quando o número n for igual a 0, para isse caso retornamos o valor 1 e a função encerrada sem necessidade de chamadas recursivas. Caso o número seja maior que 0 temos as chamadas recursivas até cair no caso base
+						<p>Perceba que na solução acima dividimos o nosso problema em instâncias menores do problema. Nos temos o caso base que é quando o número n for igual a 0, para esse caso retornamos o valor 1 e a função encerrada sem necessidade de chamadas recursivas. Caso o número seja maior que 0 temos as chamadas recursivas até cair no caso base
 						que é resolvido e assim, as chamadas retornam valores de forma a solucionar o cálculo.</p>
 						<p>Vejamos o raciocionio:</p>  
 						<ul style="list-style-type:circle">
@@ -238,30 +236,30 @@ int main(){
 						<h4>Outro exemplo</h4>
 						<p>Vamos escrever um programa que tenha uma função recursiva para calcular o valor de uma base elevada a um expoente. </p>
 <pre>
-/*Cálculo o valor de uma base elevada a um expoente.*/
-#include < stdio.h >
-/*Função recursiva*/
-int pot(int base, int expoente){
-	/*caso base*/
-	if(expoente == 0)
-		return 1;
-	/*Chamada recursiva*/
-	return base * pot(base,expoente-1);
+<span class="com">/*Cálculo o valor de uma base elevada a um expoente.*/</span>
+<span class="biblio">#include < stdio.h ></span>
+<span class="com">/*Função recursiva*/</span>
+<span class="blue">int</span> pot(<span class="blue">int</span> base, <span class="blue">int</span> expoente){
+    <span class="com">/*caso base*/</span>
+    <span class="green">if</span>(expoente == 0)
+        <span class="green">return</span> <span class="number">1</span>;
+    <span class="com">/*Chamada recursiva*/</span>
+    <span class="green">return</span> base * pot(base,expoente-1);
 }
 
-int main(){
-	int base, expoente;
-	printf("Digite a base: ");
-	scanf("%d", &base);
-	printf("Digite o expoente: ");
-	scanf("%d", &expoente);
-	if(base < 1 || expoente < 0){
-		printf("Erro!");
-	}else{
-	/*Chamada da função recursiva juntamente com o resultado*/
-		printf("\nResultado: %d", pot(base, expoente));
-	}
-	return 0;
+<span class="blue">int</span> main(){
+    <span class="blue">int</span> base, expoente;
+    printf(<span class="text">"Digite a base: "</span>);
+    scanf(<span class="text">"%d"</span>, &base);
+    printf(<span class="text">"Digite o expoente: "</span>);
+    scanf(<span class="text">"%d"</span>, &expoente);
+    <span class="green">if</span>(base < 1 || expoente < 0){
+       printf(<span class="text">"Erro!"</span>);
+    }<span class="green">else</span>{
+    <span class="com">/*Chamada da função recursiva juntamente com o resultado*/</span>
+        printf(<span class="text">"\nResultado: %d"</span>, pot(base, expoente));
+    }
+    <span class="green">return</span> <span class="number">0</span>;
 }
 </pre>
 						<p>Podemos observar mais uma vez um problema que pode ser subdivido em subproblemas menores. Temos o caso base que é quando o expoente for igual a 0 e também as chamadas recursivas que fazem 
