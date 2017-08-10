@@ -491,19 +491,18 @@ Pilha* cria_pilha(){
 	<span class="green">if</span>(arv->raiz == <span class="green">NULL</span>){
 		printf(<span class="text">"\nArvore Vazia!!"</span>);
 	<span class="com">/*caso a árvore contenha elementos*/</span>
-	}<span class="green">else</span>{
-		<span class="com">/*aux aponta para o endereço de raiz*/</span>
-		aux = arv->raiz;
-		<span class="com">/*como aqui utilizaremos uma pilha, incializamos seu topo com null*/</span>
-		pi->topo = <span class="green">NULL</span>;
-		<span class="green">do</span>{
-			<span class="green">do</span>{
-				<span class="com">/*caminha pela árvore pelo ramo da esquerda até NULL, colocando cada elemento visitado na pilha, além disso
-				   antes de colocar a raiz de cada sub-árvore na pilha também caminha no ramo da direita*/</span>
+    }<span class="green">else</span>{
+        <span class="com">/*aux aponta para o endereço de raiz*/</span>
+        aux = arv->raiz;
+        <span class="com">/*como aqui utilizaremos uma pilha, incializamos seu topo com null*/</span>
+        pi->topo = <span class="green">NULL</span>;
+        <span class="green">do</span>{
+            <span class="green">do</span>{
+				<span class="com">/*caminha pela árvore pelo ramo da esquerda até NULL, colocando cada elemento visitado na pilha*/</span>
 				<span class="green">while</span>(aux != <span class="green">NULL</span>){
 					<span class="com">/*alocamos um espaço para inserir um elemento na pilha*/</span>
 					Elemento *aux_pilha = (Elemento*) malloc(<span class="green">sizeof</span>(Elemento));
-					<span class="com">/*a pilha recebe o elemento apontado por auix*/</span>
+					<span class="com">/*a pilha recebe o elemento apontado por aux*/</span>
 					aux_pilha->num = aux;
 					<span class="com">/*para encadear os elementos da pilha, aux_pilha->prox aponta para o topo da pilha*/</span>
 					aux_pilha->prox =pi-> topo;
@@ -522,23 +521,24 @@ Pilha* cria_pilha(){
 				printf(<span class="text">"%d "</span>, pi->topo->num->num);
 				<span class="com">/*se ainda existirem elementos na pilha além de topo*/</span>
 				<span class="green">if</span>(pi->topo->prox != <span class="green">NULL</span>){
-					<span class="com">/*caso o exista um elemento a direita do endereço apontado por topo na árvore e esse elemento seja diferente de topo,
-					aux apontara para esse elementoe topo apontará para o próximo elemento da pilha*/</span>
+					<span class="com">/*caso exista um elemento a direta do prox da pilha na árvore e esse elemento seja diferente do topo,
+						aux apontara para esse elemento e topo apontará para o próximo elemento da pilha*/</span>
 					<span class="green">if</span>(pi->topo->prox->num->dir != <span class="green">NULL</span> && pi->topo->prox->num->dir != pi->topo->num){
 						aux = pi->topo->prox->num->dir;
 						pi->topo = pi->topo->prox;
 					<span class="com">/*caso o exista um elemento a direita do endereço apontado por topo na árvore e esse elemento seja igual a topo,
 						topo apontará para o próximo elemento da pilha e este será  impresso*/</span>
 					}<span class="green">else</span>{
-						<span class="com">/*caso o exista um elemento a direita do endereço apontado por topo na árvore e esse elemento seja igual a topo,
-						topo apontará para o próximo elemento da pilha e este será  impresso*/</span>
+						<span class="com">/*caso exista um elemento a direta do prox da pilha na árvore e esse elemento seja igual ao topo,
+						o topo apontará receberá prox e será impresso até que essa igualdade exista ou não existerem mais elementos
+						na pilha, isso será feito através do while*/</span>
 						<span class="green">while</span>(pi->topo->prox != <span class="green">NULL</span> && pi->topo->prox->num->dir == pi->topo->num){
 							pi->topo = pi->topo->prox;
 							printf(<span class="text">"%d "</span>, pi->topo->num->num);
 						}
 						<span class="com">/*topo apontará para o próximo elemento da pilha*/</span>
 						pi->topo = pi->topo->prox;
-						<span class="com">/*se topo não for null aux aponta para o elemento a direita do endereço apontado por topo na árvoree*/</span>
+						<span class="com">/*se topo não for null aux aponta para o elemento a direita do endereço apontado por topo na árvore*/</span>
 						<span class="green">if</span>(pi->topo != <span class="green">NULL</span>){
 							aux  = pi->topo->num->dir;
 						<span class="com">/*caso contrário aux recebe NULL*/</span>
@@ -569,21 +569,20 @@ Pilha* cria_pilha(){
 		printf(<span class="text">"\nArvore Vazia!!"</span>);
 	<span class="com">/*caso a árvore contenha elementos*/</span>
 	}<span class="green">else</span>{
-	    <span class="blue">int</span> numero, achou;
-		printf(<span class="text">"Digite o numero a ser removido da arvore: "</span>);
-		scanf(<span class="text">"%d"</span>, &numero);
-		<span class="com">/*aux aponta para o endereço de raiz*/</span>
-		aux = arv->raiz;
-		achou = <span class="number">0</span>;
-		<span class="com">/*varre toda a árvore a procura do número a ser removido*/</span>
-		<span class="green">while</span>(aux != <span class="green">NULL</span> && achou == <span class="number">0</span>){
-			<span class="green">if</span>(aux->num == numero){
-				achou = <span class="number">1</span>;
-			}<span class="green">else if</span>(aux->num > numero){
-				aux = aux->esq;
-				}<span class="green">else</span>{
-					aux = aux->dir;
-				}
+        <span class="blue">int</span> numero, achou;
+        printf(<span class="text">"Digite o numero a ser removido da arvore: "</span>);
+        scanf(<span class="text">"%d"</span>, &numero);
+        <span class="com">/*aux aponta para o endereço de raiz*/</span>
+        aux = arv->raiz;
+        achou = <span class="number">0</span>;
+        <span class="com">/*varre toda a árvore a procura do número a ser removido*/</span>
+        <span class="green">while</span>(aux != <span class="green">NULL</span> && achou == <span class="number">0</span>){
+            <span class="green">if</span>(aux->num == numero){
+                achou = <span class="number">1</span>;
+             }<span class="green">else if</span>(aux->num > numero){
+                    aux = aux->esq;
+                }<span class="green">else</span>{
+                    aux = aux->dir;
         }
         <span class="com">/*caso o número não seja encontrado*/</span>
         <span class="green">if</span>(achou == <span class="number">0</span>){
@@ -593,7 +592,7 @@ Pilha* cria_pilha(){
             <span class="com">/*caso o número a ser removido não seja a raiz*/</span>
             <span class="green">if</span>(aux != arv->raiz){
                 anterior = arv->raiz;
-                <span class="com">/*aqui procura-se o número anterior ao número a ser removido, o endereço deste será armazenado em anteirior*/</span>
+                <span class="com">/*aqui procura-se o número anterior(pai) ao número a ser removido, o endereço deste será armazenado em anterior*/</span>
                 <span class="green">while</span>(anterior->dir != aux && anterior->esq != aux){
                     <span class="green">if</span>(anterior->num > numero){
                        <span class="com">/*o número esta a esqueda da árvore*/</span>
@@ -605,13 +604,13 @@ Pilha* cria_pilha(){
                 }
                 <span class="com">/*se o nó a ser removido for um nó folha*/</span>
                 <span class="green">if</span>(aux->dir == <span class="green">NULL</span> && aux->esq == <span class="green">NULL</span>){
-                        <span class="com">/*se o nó a ser removido esta a direita de aux*/</span>
-                        <span class="green">if</span>(anterior->dir == aux){
-                            anterior->dir = <span class="green">NULL</span>;
-                        <span class="com">/*se o nó a ser removido esta a esquerda de aux*/</span>
-                        }<span class="green">else</span>{
-                            anterior->esq = <span class="green">NULL</span>;
-                        }
+                    <span class="com">/*se o nó a ser removido esta a direita de aux*/</span>
+                    <span class="green">if</span>(anterior->dir == aux){
+                        anterior->dir = <span class="green">NULL</span>;
+                    <span class="com">/*se o nó a ser removido esta a esquerda de aux*/</span>
+                    }<span class="green">else</span>{
+                        anterior->esq = <span class="green">NULL</span>;
+                    }
                     free(aux);
                 <span class="com">/*se o nó a ser removido for um nó não folha*/</span>
                 }<span class="green">else</span>{
@@ -649,7 +648,7 @@ Pilha* cria_pilha(){
                             aux1 = aux->esq;
                         }
                         free(aux);
-                        <span class="com">/*aux aponta para anteirior*/</span>
+                        <span class="com">/*aux aponta para anterior*/</span>
                         aux = anterior;
                         <span class="com">/*realocando o pedaço da árvore*/</span>
                         <span class="green">while</span>(aux != <span class="green">NULL</span>){
@@ -727,8 +726,8 @@ Pilha* cria_pilha(){
             }
             printf(<span class="text">"Numero excluido da Arvore!"</span>);
         }
-	}
-	getch();
+    }
+    getch();
 }</pre>
 					<p>Agora vamos às remoções:</p>
 					<div class="row"><center><img class="img-responsive " src="img/arv/insere9.PNG" alt="" align="middle"><center></div>
@@ -747,18 +746,18 @@ Pilha* cria_pilha(){
 					<p>Nesta última operação esvaziaremos a nossa árvore, ou seja, removeremos todos os seus elementos restantes. Esta é a implementação utilizada:</p>
 					
 					<pre>
-void esvaziar_arvore(Arvore *arv, Pilha *pi){
+<span class="blue">void</span> esvaziar_arvore(Arvore *arv, Pilha *pi){
 	<span class="com">/*caso a árvore esteja vazia*/</span>
 	<span class="green">if</span>(arv->raiz == <span class="green">NULL</span>){
 		printf(<span class="text">"\nArvore Vazia!!"</span>);
 	<span class="com">/*caso a árvore contenha elementos*/</span>
 	}<span class="green">else</span>{
         <span class="com">/*aux aponta para o endereço de raiz*/</span>
-	    aux = arv->raiz;
+        aux = arv->raiz;
         <span class="com">/*como aqui utilizaremos uma pilha, incializamos seu topo com null*/</span>
-	    pi->topo = <span class="green">NULL</span>;
-	    <span class="green">do</span>{
-	        <span class="green">whil</span>e(aux != <span class="green">NULL</span>){
+        pi->topo = <span class="green">NULL</span>;
+        <span class="green">do</span>{
+            <span class="green">while</span>(aux != <span class="green">NULL</span>){
                 Elemento *aux_pilha =(Elemento*) malloc(<span class="green">sizeof</span>(Elemento));
                 <span class="com">/*impressão do elemento apontado por aux*/</span>
                 printf(<span class="text">"%d </span>", aux->num);
@@ -768,26 +767,24 @@ void esvaziar_arvore(Arvore *arv, Pilha *pi){
                 pi->topo = aux_pilha;
                 <span class="com">/*fazemos com que aux aponte para o elemento a sua esquerda*/</span>
                 aux = aux->esq;
-	        }
-	        <span class="green">if</span>(pi->topo != <span class="green">NULL</span>){
+            }
+            <span class="green">if</span>(pi->topo != <span class="green">NULL</span>){
                 aux2 = pi->topo;
                 pi->topo = pi->topo->prox;
                 <span class="com">/*aux aponta para o elemento a direita de topo na árvore*/</span>
                 aux = aux2->num->dir;
-	        }
-
-	    }<span class="green">while</span>(pi->topo != <span class="green">NULL</span> || aux != <span class="green">NULL</span>);
-	    aux2 = pi->topo;
+            }
+        }<span class="green">while</span>(pi->topo != <span class="green">NULL</span> || aux != <span class="green">NULL</span>);
+        aux2 = pi->topo;
         <span class="com">/*passagem por todos os elementos da pilha e removendo cada um deles*/</span>
-	    <span class="green">while</span>(aux2 != <span class="green">NULL</span>){
+        <span class="green">while</span>(aux2 != <span class="green">NULL</span>){
             pi->topo = pi->topo->prox;
             free(pi->topo->num);
             free(aux2);
             aux2 = pi->topo;
-	    }
-	    arv->raiz = <span class="green">NULL</span>;
-	    printf((<span class="text">"\nArvore esvaziada"</span>);
-
+        }
+        arv->raiz = <span class="green">NULL</span>;
+        printf((<span class="text">"\nArvore esvaziada"</span>);
 	}
 	getch();
 }</pre>
@@ -798,7 +795,7 @@ void esvaziar_arvore(Arvore *arv, Pilha *pi){
 				<h3>Video Explicativo - Ávore Binária Parte 3</h3>
 					<p>                                      </p>
 					<video width=80% height="315" class="img-responsive" controls>
-					  <source src="video/alocacao.mp4" type="video/mp4">
+					  <source src="video/arvb_pt3.mp4" type="video/mp4">
 					  <source src="movie.ogg" type="video/ogg">
 					  Your browser does not support the video tag.
 					</video>
