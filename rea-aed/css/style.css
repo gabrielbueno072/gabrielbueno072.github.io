@@ -2273,6 +2273,7 @@ select[multiple].navbar-form .btn {
 }
 .navbar-default {
   background-color: #ecf0f1;
+  position: fixed;
 }
 .navbar-default .navbar-brand {
   color: #34495e;
@@ -4482,19 +4483,21 @@ footer {
   padding: 0;
 }
 footer a {
-  color: #9aa4af;
+  color: #34495e;
   font-weight: 700;
 }
 footer p {
   font-size: 15px;
   line-height: 20px;
   margin-bottom: 10px;
+  color: #848484;
 }
 .footer-title {
   margin: 0 0 22px;
   padding-top: 21px;
   font-size: 24px;
   line-height: 40px;
+  color: #34495e;
 }
 .footer-brand {
   display: block;
